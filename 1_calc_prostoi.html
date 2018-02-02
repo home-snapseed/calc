@@ -1,0 +1,41 @@
+<html>
+<head>
+     <title>Калькулятор простой</title>
+</head>
+<body>
+    <h1>Калькулятор на JavaScript</h1>   
+    <form>
+    <label for="n1">Первое значение:</label><br>
+    <input id="n1" type="text"><br><br>
+    <label for="n2">Второе значение:</label><br>
+    <input id="n2" type="text"><br>
+    <hr>
+    <input type="button" value="Сложение" onclick="PlusId()">
+    <input type="button" value="Вычитание" onclick="MinusId()">
+    </form>
+    <p>Результат: <span id="resultId"></span></p>
+    <script>
+        var num1, num2, result;
+        
+        function PlusId() {
+            num1 = parseInt(document.getElementById('n1').value);
+            
+            num2 = parseInt(document.getElementById('n2').value);
+            
+            result = num1 + num2;
+            
+            document.getElementById('resultId').innerHTML = result;
+        }
+        
+        function MinusId() {
+            num1 = parseInt(document.getElementById('n1').value);
+            
+            num2 = parseInt(document.getElementById('n2').value);
+            
+            result = num1 - num2;
+            
+            document.getElementById('resultId').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

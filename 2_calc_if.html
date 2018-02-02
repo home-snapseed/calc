@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Калькулятор через оператор IF</title>
+</head>
+<body>
+ <h1>Калькулятор через оператор IF</h1> 
+<form>
+    <label for="num1">Первое значение:</label><br>
+    <input id="num1" type="text"><br><br>
+    <label for="num2">Второе значение:</label><br>
+    <input id="num2" type="text"><br>
+<br>
+
+<!-- кнопки матем. выражений -->
+    
+<select name="act" id="act">
+    <option value="1">сложение</option>
+    <option value="2">вычитание</option>
+    <option value="3">умножение</option>
+    <option value="4">деление</option>
+</select>
+<input type="button" value="=" onclick="myCalc()">
+    
+<!-- вывод результата -->
+<p>Результат: <span id="resultId"></span></p>
+    
+<!-- очистка формы -->
+<input type="reset" value="clear"> 
+</form>
+
+<script>
+    function myCalc() {
+        
+    var n1=document.getElementById('num1').value;
+    var n2=document.getElementById('num2').value;
+    n1=parseFloat(n1);
+    n2=parseFloat(n2);
+    var a=document.getElementById('act').value;
+    var r=0;
+    
+    if(a==1) {r=n1+n2;}
+    if(a==2) {r=n1-n2;}
+    if(a==3) {r=n1*n2;}
+    if(a==4){
+        if(n2==0){
+            alert("на 0 делить нельзя");
+            document.getElementById("num2").value="";
+            document.getElementById("num2").focus();
+        } else { 
+            r=n1/n2;
+        } 
+}
+
+document.getElementById("resultId").innerHTML=r;
+    }
+</script>
+</body>
+</html>
