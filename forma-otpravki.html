@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Сохранение данных из формы</h1>
+	<form name="myForm">
+		<input name="poleText" type="text">
+		<input type="button" value="Нажми" onclick="myFunction();">
+	</form>
+
+<script type="text/javascript">
+	function myFunction() {
+
+		var name = "hi " + document.myForm.poleText.value;
+
+		console.log(name);
+	}
+</script>
+</body>
+</html>
